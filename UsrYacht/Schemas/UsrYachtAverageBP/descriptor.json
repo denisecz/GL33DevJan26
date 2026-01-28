@@ -1,0 +1,13 @@
+﻿{
+  "Descriptor": {
+    "UId": "4d8d5fd5-557b-432c-805d-30a066ebff4d",
+    "Name": "UsrYachtAverageBP",
+    "ModifiedOnUtc": "\/Date(1769628797000)\/",
+    "Parent": {
+      "UId": "ecdcc8ff-272c-4957-9381-7d74ce17e140",
+      "Name": "BaseMiniPageTemplate"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Yacht Average BP"
+  }
+}
