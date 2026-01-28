@@ -624,7 +624,11 @@
 	</ItemGroup>
 	<ItemGroup Label="Standalone package external assembly references" />
 	<ItemGroup Label="Entity Files">
+		<Compile Remove="$(RelativePkgFolderPath)/UsrYacht/Schemas/UsrDriveTypesI/UsrDriveTypesI.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrYacht/Schemas/UsrDriveTypesI/UsrDriveTypesI.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrYacht/Schemas/UsrDriveTypesV/UsrDriveTypesV.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrYacht/Schemas/UsrDriveTypesV/UsrDriveTypesV.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrYacht/Schemas/UsrYacht/UsrYacht.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrYacht/Schemas/UsrYacht/UsrYacht.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrYacht/Schemas/UsrYachtDriveTypes/UsrYachtDriveTypes.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrYacht/Schemas/UsrYachtDriveTypes/UsrYachtDriveTypes.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrYacht/Schemas/UsrYachtStatuses/UsrYachtStatuses.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrYacht/Schemas/UsrYachtStatuses/UsrYachtStatuses.cs')" />
 	</ItemGroup>
 	<ItemGroup Label="3rd Party References"></ItemGroup>
 	<Target Name="Paths" BeforeTargets="BeforeCompile">
