@@ -57,6 +57,12 @@ define("UsrYacht_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 							"code": "PDS_UsrLength",
 							"caption": "#ResourceString(PDS_UsrLength)#",
 							"dataValueType": 4
+						},
+						{
+							"id": "f2af4f68-cd5c-bfe8-15fa-4d5a57984dda",
+							"code": "PDS_UsrColumn10",
+							"caption": "#ResourceString(PDS_UsrColumn10)#",
+							"dataValueType": 10
 						}
 					]
 				}
@@ -112,6 +118,11 @@ define("UsrYacht_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 						"modelConfig": {
 							"path": "PDS.UsrLength"
 						}
+					},
+					"PDS_UsrColumn10": {
+						"modelConfig": {
+							"path": "PDS.UsrColumn10"
+						}
 					}
 				}
 			},
@@ -158,6 +169,9 @@ define("UsrYacht_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 						},
 						"UsrLength": {
 							"path": "UsrLength"
+						},
+						"UsrColumn10": {
+							"path": "UsrColumn10"
 						}
 					}
 				}
