@@ -406,7 +406,16 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"PDS_UsrLength_acrpo0g": {
 						"modelConfig": {
 							"path": "PDS.UsrLength"
-						}
+						},							
+						"validators": {
+							"MySuperValidator": {
+								"type": "usr.DGValidator",
+								"params": {
+									"maxValue": 5000,
+									"message": "#ResourceString(LengthCannotBeMore)#"
+								}
+							}
+						}	
 					},
 					"PDS_UsrCrewCount_mptoo7h": {
 						"modelConfig": {
@@ -421,12 +430,22 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"PDS_UsrPrice_9d5zjz3": {
 						"modelConfig": {
 							"path": "PDS.UsrPrice"
-						}
+						},
+							"validators": {
+							"MySuperValidator": {
+								"type": "usr.DGValidator",
+								"params": {
+									"maxValue": 100000,
+									"message": "#ResourceString(PriceCannotBeMore)#"
+								}
+							}
+						}	
 					},
+					
 					"PDS_UsrColumn15_0rsdujl": {
 						"modelConfig": {
 							"path": "PDS.UsrColumn15"
-						}
+						}	
 					},
 					"PDS_UsrColumn15_0rsdujl_List": {
 						"isCollection": true,
@@ -525,6 +544,36 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 			}
 		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
-		validators: /**SCHEMA_VALIDATORS*/{}/**SCHEMA_VALIDATORS*/
+		validators: /**SCHEMA_VALIDATORS*/{
+			"usr.DGValidator": {
+				validator: function (config) {
+					return function (control) {
+						let value = control.value;
+						let maxValue = config.maxValue;
+						let valueIsCorrect = value < maxValue;
+						var result;
+						if (valueIsCorrect) {
+							result = null;
+						} else {
+							result = {
+								"usr.DGValidator": { 
+									message: config.message
+								}
+							};
+						}
+						return result;
+					};
+				},
+				params: [
+					{
+						name: "maxValue"
+					},
+					{
+						name: "message"
+					}
+				],
+				async: false
+			}
+		}/**SCHEMA_VALIDATORS*/
 	};
 });
